@@ -37,3 +37,22 @@ document.getElementById("calculator").addEventListener("click", function () {
     typedNumberField.value = newTypedNumber;
   }
 });
+
+document.getElementById("submit-btn").addEventListener("click", function () {
+  const displayPinField = document.getElementById("display-pin");
+  const displayPin = displayPinField.value;
+
+  const typedNumberField = document.getElementById("typed-number");
+  const typedNumber = typedNumberField.value;
+
+  const successMessege = document.getElementById("pin-matched");
+  const errorMessege = document.getElementById("pin-not-matched");
+
+  if (displayPin === typedNumber) {
+    successMessege.style.display = "block";
+    errorMessege.style.display = "none";
+  } else {
+    errorMessege.style.display = "block";
+    successMessege.style.display = "none";
+  }
+});
